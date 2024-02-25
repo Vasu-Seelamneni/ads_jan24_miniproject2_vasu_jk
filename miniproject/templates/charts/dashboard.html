@@ -12,12 +12,52 @@
     </div>
     
     <div class="container text-center mt-5">
-        <h1>Welcome to your Dashboard!</h1>
+        <h1>Welcome to AMAZON televisions dashboard!</h1>
+    
+    <!-- Section 1: Load Graph -->
+    <div class="row my-2">
+        <div class="col-12">
+            <button class="btn btn-primary" onclick="getImage()">Top 5 Brands</button>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <img id="matplotlib" width="500" alt="Graph Image">
+        </div>
+    </div>
+
+    <!-- Section 2: Load Table -->
+    <div class="row my-1">
+        <div class="col-12">
+            <button class="btn btn-primary" onclick="getPandas()">List of Televisions</button>
+        </div>
+    </div>
+    <div class="row">
+        <div id="pandas" class="col-12">
+            <!-- Table will be loaded here -->
+        </div>
+    </div>
+</div>
 
     <script>
         function logout() {
             window.location.href = "{% url 'logout' %}";
         }
+
+        function getImage() {
+            fetch('{% url 'charts:get-bar-graph' %}')
+                .then(res => res.blob())
+                .then(data => {
+                    let imgURL = URL.createObjectURL(data);
+                    document.getElementById('matplotlib').src = imgURL;
+                });
+        }
+
+        function getPandas() {
+            fetch('{% url 'charts:get-data' %}')
+                .then(res => res.text())
+                .then(data => document.getElementById('pandas').innerHTML = data);
+        }
     </script>
 </body>
+</html>
