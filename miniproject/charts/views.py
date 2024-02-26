@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load dataset into a dataframe with a comma separator
-df_tvs = pd.read_csv("C:\\Vasu-Dell\\MiniProject-ADS\\ads_jan24_miniproject2_vasu_jk\\miniproject\\data\\amazon_television_data.csv", sep=",")
+df_tvs = pd.read_csv("..\\miniproject\\data\\amazon_television_data.csv", sep=",")
 
 class Api(TemplateView):
     
