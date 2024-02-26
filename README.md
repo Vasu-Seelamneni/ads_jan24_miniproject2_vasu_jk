@@ -32,6 +32,7 @@
 
 ## To run the application, execute the following commands:
 
+- Activate the virtual environment by running: `.\.mproj\Scripts\activate`
 - Run `python manage.py makemigrations` to create the necessary database migrations.
 - Run `python manage.py migrate` to apply the migrations and create the database tables.
 - Finally, start the application by running `python manage.py runserver`.
