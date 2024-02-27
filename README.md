@@ -1,4 +1,4 @@
-# Web Scraping AMAZON televisions data
+# Web Scraping AMAZON televisions data!!
 **Project Idea:** The project involves scraping data from the ecommerce website *`www.amazon.in`* to gather information about the top 5 brands of new televisions and the list of available televisions with more details.
 
 ![Alt text](static/top_5_brands.png)
